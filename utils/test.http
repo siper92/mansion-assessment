@@ -1,0 +1,9 @@
+POST http://localhost:8080
+# POST https://us-central1-talent-x-hub.cloudfunctions.net/utilInitializeUserEntityStats
+Content-Type: application/json
+
+{
+  "key": "init-stats-c01c59f4a69618651813d1c55c74e2d3c3a4f8d7229dcd273f3d01622879e6f9"
+}
+
+###
