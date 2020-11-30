@@ -95,4 +95,15 @@ func TestCacheValidation(t *testing.T) {
 			t.Errorf("Cache is valid with ExpiresAt in the past")
 		}
 	})
+
+	t.Run("cache_is_invalid_when_missing_ExpiresAt", func(t *testing.T) {
+		entity := cache.Cache{
+			CacheID: cache.GetCacheId("test a"),
+			Data:    data}
+		// ExpiresAt: time.Now().Add(-time.Duration(1))}
+
+		if entity.IsValidCache() {
+			t.Errorf("Cache is valid with missing ExpiresAt")
+		}
+	})
 }
