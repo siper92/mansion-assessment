@@ -1,2 +1,4 @@
+github.com/DocHQ/go-postcodes v0.0.0-20190221103419-e855a1f2dd35 h1:PFnXgCO5jUB6iwqPBIboPZPv3vsicRUfKeqB4/wJ5pI=
+github.com/DocHQ/go-postcodes v0.0.0-20190221103419-e855a1f2dd35/go.mod h1:vXXEoREJ6FBBxgpHY0RcMvLioV9XNTN0niG7dg3ErpM=
 github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
 github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=

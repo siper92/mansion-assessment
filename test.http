@@ -1,0 +1,10 @@
+POST http://localhost:8080
+# POST https://us-central1-talent-x-hub.cloudfunctions.net/utilInitializeUserEntityStats
+Content-Type: application/json
+
+{
+    "postcode": "AL9 5JP",
+    "radius": 30
+}
+
+###

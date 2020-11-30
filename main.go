@@ -2,29 +2,24 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"log"
 	"net/http"
 
-	cache "siper92/mansion-assessment/internal"
+	"siper92/mansion-assessment/internal/handler"
 
 	"github.com/gorilla/mux"
 )
 
 const ListenUrl = "localhost:8080"
 
-func getLocations(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-
-	location := cache.GetCacheContext("location")
-	fmt.Print(location)
-	io.WriteString(w, `{"alive": true}`)
-}
-
 func main() {
+	fmt.Printf("\n\t>>> Initializing service")
+	// fasters load, but possible a period with incomplete results
+	go handler.InitCache()
+	fmt.Printf("\n\t>>> Service initialized")
+
 	r := mux.NewRouter()
-	r.HandleFunc("/", getLocations).Methods(http.MethodPost)
+	r.HandleFunc("/", handler.FilterNearbyLocations).Methods(http.MethodPost)
 
 	fmt.Printf("\n\t>>> Listening for POST requests on %s\n\n", ListenUrl)
 	log.Fatal(http.ListenAndServe(ListenUrl, r))
